@@ -14,20 +14,23 @@ const agentConfig = {
 
   // ─── BASIC INFO ───────────────────────────────────────────────
   // Your agent's name and branding (shown in the header & title)
-  name: "AgentX",
+  name: "23bd1a665w",
   emoji: "🤖",
-  tagline: "Your AI Conversation Buddy",
-  description: "I remember everything about you and get smarter the more we talk.",
+  tagline: "Your Own F1 encyclopedia",
+  description: "You want to learn about F1 then Boom u got me",
 
   // ─── PERSONALITY ──────────────────────────────────────────────
   // Write your agent's core personality. This is always included
   // in the system prompt regardless of conversation depth.
-  personality: `You are a curious and evolving AI conversation buddy.`,
+  personality: `I'm the F1 god and i know everything about it.`,
 
   // Core rules the AI must always follow
   coreRules: [
     "Keep replies to 3-5 sentences. Be engaging and natural.",
     "Ask exactly ONE follow-up question per reply.",
+    "Use F1 terminology and racing metaphors (e.g., 'lights out', 'pole position', 'box box') naturally in your responses.",
+    "If the user asks about non-motorsport topics, politely steer the conversation back to Formula 1.",
+    "When providing lap times or championship standings, format them clearly using bullet points."
   ],
 
   // ─── DEPTH-AWARE BEHAVIOR ─────────────────────────────────────
@@ -81,15 +84,15 @@ const agentConfig = {
   //   type:      "string" or "array"
   //   extract:   Whether to include this key in the extraction prompt
   memorySchema: [
-    { key: "name",              label: "👤 Name",        type: "string",  extract: true  },
-    { key: "age",               label: "🎂 Age",         type: "string",  extract: true  },
-    { key: "location",          label: "📍 Location",    type: "string",  extract: true  },
-    { key: "background",        label: "🎓 Background",  type: "string",  extract: true  },
-    { key: "interests",         label: "❤️ Interests",   type: "array",   extract: true  },
-    { key: "goals",             label: "🎯 Goals",       type: "array",   extract: true  },
-    { key: "current_situation",  label: "📌 Situation",   type: "string",  extract: true  },
-    { key: "personality",       label: "✨ Personality",  type: "string",  extract: true  },
-    { key: "topics_discussed",   label: "💬 Topics",      type: "array",   extract: false },
+    { key: "name", label: "👤 Name", type: "string", extract: true },
+    { key: "age", label: "🎂 Age", type: "string", extract: true },
+    { key: "location", label: "📍 Location", type: "string", extract: true },
+    { key: "background", label: "🎓 Background", type: "string", extract: true },
+    { key: "interests", label: "❤️ Interests", type: "array", extract: true },
+    { key: "goals", label: "🎯 Goals", type: "array", extract: true },
+    { key: "current_situation", label: "📌 Situation", type: "string", extract: true },
+    { key: "personality", label: "✨ Personality", type: "string", extract: true },
+    { key: "topics_discussed", label: "💬 Topics", type: "array", extract: false },
   ],
 
   // How many user messages to batch before running memory extraction
@@ -101,18 +104,18 @@ const agentConfig = {
   // The 4 categories shown on the topic selection screen.
   // Users can pick these to start a conversation.
   trendingCategories: [
-    { category: "Tech",    icon: "💻" },
-    { category: "Sports",  icon: "🏅" },
+    { category: "Tech", icon: "💻" },
+    { category: "Sports", icon: "🏅" },
     { category: "Science", icon: "🔬" },
-    { category: "World",   icon: "🌍" },
+    { category: "World", icon: "🌍" },
   ],
 
   // Fallback topics shown when the API is unavailable or cached
   fallbackTrends: [
-    { category: "Tech",    topic: "AI agents reshaping software in 2026",  icon: "💻" },
-    { category: "Sports",  topic: "IPL 2026 opening week highlights",     icon: "🏅" },
-    { category: "Science", topic: "Quantum computing hits new milestone",  icon: "🔬" },
-    { category: "World",   topic: "G20 summit latest outcomes",           icon: "🌍" },
+    { category: "Tech", topic: "AI agents reshaping software in 2026", icon: "💻" },
+    { category: "Sports", topic: "IPL 2026 opening week highlights", icon: "🏅" },
+    { category: "Science", topic: "Quantum computing hits new milestone", icon: "🔬" },
+    { category: "World", topic: "G20 summit latest outcomes", icon: "🌍" },
   ],
 
   // How long to cache trending topics (in milliseconds)
